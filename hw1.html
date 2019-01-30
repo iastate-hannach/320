@@ -1,0 +1,25 @@
+<script>
+a=1
+b=100
+c=false
+alert("think of a number between 1 and 100")
+while (!c)
+	{
+	guess=(a+b)/2
+	guess=parseInt(guess)
+	response=prompt("is your number "+guess+"? indicate \"yes\" if i'm correct, otherwise please indicate \"<\" or \">\"")
+	if (response=="yes")
+	{
+	c=true
+	}
+	if (response=="<")
+	{
+	b=guess-1	
+	}
+	if (response==">")
+	{
+	a=guess+1
+	}
+	}
+alert("YAY, I WIN")
+</script>
