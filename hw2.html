@@ -1,0 +1,25 @@
+<script>
+shift=parseInt(prompt("Enter an integer, either positive or negative"))
+z=(prompt("Enter a phrase"))
+y=" "
+for(i=0;i<z.length;i++)
+{
+x=z.charCodeAt(i)
+if(x>=65 && x<=90)
+{
+x-=65
+x+=shift
+x=x%26
+x+=65
+}
+if(x>=97 && x<=122)
+{
+x-=97
+x+=shift
+x=x%26
+x+=97
+}
+y+=String.fromCharCode(x)
+}
+alert(y)
+</script>
