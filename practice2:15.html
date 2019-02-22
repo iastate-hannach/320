@@ -1,0 +1,36 @@
+<script>
+// THE CORRECT VERSION IS ON THE WEBSITE. this version does work.
+students = [
+	{
+		netid: "alyrose",
+		firstname: "Alyssa",
+		lastname: "Jennings",
+		grade: "A+",
+		gender: "f" 
+	},
+	{
+		netid: "mmiller3",
+		firstname: "Daisy", 
+		lastname: "Miller",
+		grade: "A+",
+		gender: "f"
+	},
+	{
+		netid: "evgeny",
+		firstname: "Evgeny",
+		lastname: "Chukharev-Hudilainen",
+		grade: "F",
+		gender: "m"
+	}
+]
+
+for (i=0; i<students.length; i++) {
+
+x = {m: "Mr.", f: "Ms."}[students[i].gender]
+
+	alert("Dear "+x+" "+students[i].lastname+", \nYour grade is "+students[i].grade+".")
+}
+
+// alert(students[0]["name"]) // or alert(students[0].name)
+// or for (i=0; i<students["length"]; i++) alert (i)
+</script>

@@ -1,0 +1,23 @@
+<script>
+// 3. Write a script that prompts the user for a number of minutes that 
+//elapsed from midnight, and displays the respective time as HH:MM.
+//Concepts: prompt/alert, parseInt, division, modulus (division remainder).
+
+// modulus example: 
+	//var x = 5;
+	//var y = 2;
+	//var z = x % y;
+	
+//
+
+a = parseInt(prompt("Enter a number of minutes"))
+x=00
+b=00
+if ( a > 1439 )
+{
+a = a - 1439
+}
+x = parseInt(a/60)
+b = a % 60
+alert(""+x+":"+b+"")
+</script>

@@ -1,0 +1,26 @@
+<script>
+  items = [
+    {
+      prompt: "Americans were the first to land on ___ Moon.",
+      "the": "Correct!",
+      a: "because there is only one Moon, you should use the definite article",
+      an: "you can only use \"an\" in front of a vowel",
+      '': "you do need an article with the word \"Moon\""
+    }
+  ]
+
+  for (i=0; i<items.length; i++) {
+    do {
+      response = prompt(items[i].prompt)
+      if (response === items[i].correct) {
+        alert("Correct!")
+      } else if (response in items[i]) {
+        alert("Great job, but " + items[i][response] + ".")
+      } else {
+        alert("Please enter a, an, the, or just press enter for a zero article.")
+      }
+    } while (response !== items[i].correct)
+  }
+
+
+</script>

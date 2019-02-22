@@ -1,0 +1,15 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+//XML = USED TO be used... now it's JSON
+//JSON = java script object notation
+//AJAX
+ 
+ function process(data) 
+  {
+ alert(data.sentences[0].tokens[0].pos)
+ //alert(data.sentences[1].tokens[1].pos)
+    console.log(JSON.stringify(data, null, 4))
+  }
+    $.getJSON("https://linguatorium.com/tools/320/parse.pl", { text: "Hello world!" }, process);
+</script>
