@@ -1,0 +1,49 @@
+<script>
+
+        question_bank = {
+          in: ["The toy is ___ the box.", "I met him ___ September.", "___ the beginning was the Word.", "There is some milk ___ the fridge.", "I prefer to read in the library."],
+          to: ["He went on vacation ___ Brazil.", "She went ___ the bowling alley every Friday.", "When I get tired, I go ___ bed.", "The kids went ___ the zoo.", "After a long hard day, he decided to go ___ the bars."],
+          under: ["The cat was ___ the table.", "The child quickly hid ___ the blankets.", "Water flowed ___ the bridge.", "The chair was pushed ___ the desk.", "I found my long-lost stuffed animal ___ my bed."],
+          at: ["Families often argue ___ Christmas time.", "I work faster ___ night.", "Her shift was finished ___ 7pm.", "We can meet ___ the airport.", "She was standing ___ the bus stop."],
+          over: ["He drove ___ the bridge.", "The plane flew ___ the Pacific Ocean.", "She put a blanket ___ her friend's shoulders.", "The population has increased ___ the past 20 years.", "The cow jumped ___ the moon."]
+        }
+        answer_bank = {
+          in: ["The toy is in the box.", "I met him in September.", "In the beginning was the Word.", "There is some milk in the fridge.", "I prefer to read in the library."],
+          to: ["He went on vacation to Brazil.", "She went to the bowling alley every Friday.", "When I get tired, I go to bed.", "The kids went to the zoo.", "After a long hard day, he decided to go to the bars."],
+          under: ["The cat was under the table.", "The child quickly hid under the blankets.", "Water flowed under the bridge.", "The chair was pushed under the desk.", "I found my long-lost stuffed animal under my bed."],
+          at: ["Families often argue at Christmas time.", "I work faster at night.", "Her shift was finished at 7pm.", "We can meet at the airport.", "She was standing at the bus stop."],
+          over: ["He drove over the bridge.", "The plane flew over the Pacific Ocean.", "She put a blanket over her friend's shoulders.", "The population has increased over the past 20 years.", "The cow jumped over the moon."]
+        }
+        
+        learner_model = { in: 0, to: 0, under: 0, at: 0, over: 0 }
+        
+        prepositions = ['in', 'to', 'under', 'at', 'over']
+        
+        while (true) {
+          worst_known_preposition = prepositions[0]
+          smallest_score = learner_model[worst_known_preposition]
+          for (i=1; i<prepositions.length; i++) 
+          {
+            if (learner_model[prepositions[i]] < smallest_score) 
+            {
+              smallest_score = learner_model[prepositions[i]]
+              worst_known_preposition = prepositions[i]
+            }
+          }
+          alert("Worst known preposition is " + worst_known_preposition)
+          random = (Math.floor(Math.random() * 5) + 0)
+          x = window.prompt(question_bank[worst_known_preposition][random])
+        
+          if (x == worst_known_preposition)
+            {
+                alert("CORRECT!")
+                learner_model[worst_known_preposition]++
+            }
+            else 
+            {
+                alert(answer_bank[worst_known_preposition][random])
+                learner_model[worst_known_preposition]--
+            }
+
+        }        
+        </script>

@@ -1,0 +1,39 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<body style="background-color: #FFA5DE">
+<div style="background-color: #99B3FF; width: 50%; height: 500px; margin: auto; text-align: center; font-size: 50px;" id="div">
+Author: <input type="text" id="author" style="font-size: 50px;"><br>
+Title: <input type="text" id="title" style="font-size: 50px;"><br>
+<button id="search" style="font-size: 100px; margin-top: 50px;">Search</button>
+</div>
+<script>
+all_books = [
+{
+  title: 'My cool book',
+  author: 'John Smith',
+  year: 1025,
+  read: false,
+  given_to: null,
+  pages: 100,
+  series_name: null
+ 
+},
+{
+  title: 'Language and computers',
+  author: 'Markus Dickinson, Chris Brew, Detmar Meurers',
+  year: 2013
+}
+]
+
+$('#search').click(function() {
+  author = $('#author').val()
+  title = $('#title').val()
+  for (i=0; i<all_books.length; i++) {
+    if (all_books[i].author.toUpper() === author && all_books[i].title.toUpper === title) {
+	  //alert("Eureka! I found the book!")
+	  $('#div').html(JSON.stringify(all_books[i]))
+	}
+  }
+})
+
+</script>
+</body>
